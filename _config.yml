@@ -99,7 +99,7 @@ description:    Hong Kongs Primary Event for Game Developers
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        
+baseurl:        /lab/amsf
 
 # Flatten base
 #
@@ -109,7 +109,7 @@ baseurl:
 # enable this option if you're using GitHub Pages.
 #
 # Default:      false
-flatten_base:   true
+flatten_base:   false
 
 # CSS path used in templates
 #
