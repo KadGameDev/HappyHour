@@ -350,7 +350,7 @@ module.exports = (grunt) ->
       dist:
         options:
           config: "_config.yml,_amsf.yml,<%= config.app %>/_data/<%= amsf.theme.current %>.yml"
-          dest: "<%= config.dist %><%= config.base %>"
+          dest: "<%= config.dist %>"
 
     shell:
       options:
