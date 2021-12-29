@@ -6,7 +6,7 @@ pages:
   stage: deploy
   script:
   - bundle install
-  - npm install grunt --save-dev --legacy-peer-deps
+  - npm install grunt --save-dev --legacy-peer-deps --force
   - grunt build
   artifacts:
     paths:
