@@ -343,7 +343,7 @@ module.exports = (grunt) ->
           incremental: true
           livereload: true
           config: "_config.yml,_amsf.yml,<%= config.app %>/_data/<%= amsf.theme.current %>.yml,_config.dev.yml"
-          dest: "<%= config.dist %><%= config.base_dev %>"
+          dest: "<%= config.dist %>"
           drafts: true
           future: true
 
