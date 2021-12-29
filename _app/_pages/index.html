@@ -13,38 +13,28 @@ thumb_force_logo: true
   <header>
 
     <h1 class="image-title">
-      Almace Scaffolding
-      <img src="{{ amsf_user_assets }}/svg/amsf.svg">
+      Game Dev Happy Hour
+      <img src="{{ amsf_user_assets }}/svg/GameDevHappyHour_Logo_Full_Colour.svg">
     </h1>
 
-    <h2 class="sub-title">A super-fast Jekyll framework fighting against the website obesity.</h2>
+    <h2 class="sub-title">Hong Kongs Primary Event for Game Developers</h2>
 
-    <small>a.k.a. <b>AMSF</b>&#x30FB;ver. <b class="amsf-version">2.0.22</b>&#x30FB;view it on <a href="https://github.com/sparanoid/almace-scaffolding">GitHub</a></small>
+    <small>a.k.a. <b>GDHH</b><b class="amsf-version">Join us on <a href="https://github.com/sparanoid/almace-scaffolding">Discord</a></small>
   </header>
 
+   <!-- Post content -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+
   <div class="page-content">
-    <h2>Getting Started</h2>
-    {% for post in site.tags.getting-started %}
+    <h2>Events</h2>
+    {% for post in site.tags.intro %}
       {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
     {% endfor %}
 
-    <h2>Customization</h2>
-    {% for post in site.tags.customization %}
-      {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
-    {% endfor %}
-
-    <h2>Theme Curtana</h2>
-    {% for post in site.tags.curtana %}
-      {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
-    {% endfor %}
-
-    <h2>Deployment</h2>
-    {% for post in site.tags.deployment %}
-      {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
-    {% endfor %}
-
-    <h2>Miscellaneous</h2>
-    {% for post in site.tags.miscellaneous %}
+    <h2>About Us</h2>
+    {% for post in site.tags.about %}
       {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
     {% endfor %}
   </div>
