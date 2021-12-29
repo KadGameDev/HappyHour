@@ -61,7 +61,7 @@ plugins:
 # need to change it.
 #
 # Default:      false
-dev:            false
+dev:            true
 
 # Site name
 #
@@ -99,7 +99,7 @@ description:    Hong Kongs Primary Event for Game Developers
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        /lab/amsf
+baseurl:        ""
 
 # Flatten base
 #
