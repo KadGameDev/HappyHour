@@ -286,21 +286,21 @@ module.exports = (grunt) ->
  #         dest: "<%= config.dist %>"
  #       ]
 
-    cacheBust:
-      options:
-        algorithm: "md5"
-        assets: ["**/*.css", "**/*.js"]
-        baseDir: "<%= config.dist %>"
-        deleteOriginals: true
-        encoding: "utf8"
-        length: 8
-
-      dist:
-        files: [
-          expand: true
-          cwd: "<%= config.dist %>"
-          src: "**/*.html"
-        ]
+#    cacheBust:
+ #     options:
+  #      algorithm: "md5"
+  #      assets: ["**/*.css", "**/*.js"]
+  #      baseDir: "<%= config.dist %>"
+  #      deleteOriginals: true
+  #      encoding: "utf8"
+  #      length: 8
+#
+#      dist:
+#        files: [
+#          expand: true
+#          cwd: "<%= config.dist %>"
+#          src: "**/*.html"
+#        ]
 
     service_worker:
       dist:
