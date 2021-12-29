@@ -26,7 +26,6 @@ module.exports = (grunt) ->
       cfg_dev: grunt.file.readYAML("_config.yml")
       pkg: grunt.file.readJSON("package.json")
       amsf: grunt.file.readYAML("_amsf.yml")
-      deploy: grunt.file.readYAML("_deploy.yml")
       app: "<%= config.cfg.source %>"
       dist: "<%= config.cfg.destination %>"
       base: "<%= config.cfg.baseurl %>"
@@ -356,60 +355,7 @@ module.exports = (grunt) ->
     shell:
       options:
         stdout: true
-
-      # Sync compiled static files via `rsync`
-      amsf__deploy__rsync:
-        command: "rsync -avz -e 'ssh -p <%= config.deploy.rsync.#{deploy_env}.port %>' --delete --progress <%= config.deploy.rsync.#{deploy_env}.params %> <%= config.dist %>/ <%= config.deploy.rsync.#{deploy_env}.user %>@<%= config.deploy.rsync.#{deploy_env}.host %>:<%= config.deploy.rsync.#{deploy_env}.dest %> > deploy-rsync-#{deploy_env}.log"
-
-      # Sync compiled static files via `s3_website`
-      amsf__deploy__s3:
-        command: "s3_website push --site=<%= config.dist %>/ > deploy-s3-#{deploy_env}.log"
-
-      # Copy compiled static files to local directory for further post-process
-      amsf__deploy__sparanoid__copy_to_local:
-        command: "rsync -avz --delete --progress <%= config.deploy.rsync.#{deploy_env}.params %> <%= jekyll.dist.options.dest %>/ <%= config.deploy.sparanoid.#{deploy_env}.dest %>/site/<%= config.base %> > deploy-sparanoid-#{deploy_env}.log"
-
-      # Auto commit untracked files sync'ed from sync_local
-      amsf__deploy__sparanoid__auto_commit:
-        command: "bash <%= config.deploy.sparanoid.#{deploy_env}.dest %>/auto-commit '<%= config.pkg.name %>'"
-
-      amsf__core__update_deps:
-        command: [
-          "bundle update"
-          "bundle install"
-          "yarn install"
-        ].join("&&")
-
-      amsf__theme__to_app:
-        command: [
-          "rsync -avz --delete --progress <%= amsf.base %>/themes/<%= amsf.theme.new_name %>/config.yml <%= config.app %>/_data/<%= amsf.theme.new_name %>.yml"
-          "rsync -avz --delete --progress <%= amsf.base %>/themes/<%= amsf.theme.new_name %>/includes/  <%= config.app %>/_includes/themes/<%= amsf.theme.new_name %>/includes/"
-          "rsync -avz --delete --progress <%= amsf.base %>/themes/<%= amsf.theme.new_name %>/layouts/   <%= config.app %>/_includes/themes/<%= amsf.theme.new_name %>/layouts/"
-          "rsync -avz --delete --progress <%= amsf.base %>/themes/<%= amsf.theme.new_name %>/assets/    <%= config.app %>/assets/themes/<%= amsf.theme.new_name %>/"
-          "rsync -avz --delete --progress <%= amsf.base %>/themes/<%= amsf.theme.new_name %>/pages/     <%= config.app %>/_pages/themes/<%= amsf.theme.new_name %>/"
-        ].join("&&")
-
-      amsf__theme__to_cache:
-        command: [
-          "rsync -avz --delete --progress <%= config.app %>/_data/<%= amsf.theme.current %>.yml                  <%= amsf.base %>/themes/<%= amsf.theme.current %>/config.yml"
-          "rsync -avz --delete --progress <%= config.app %>/_includes/themes/<%= amsf.theme.current %>/includes/ <%= amsf.base %>/themes/<%= amsf.theme.current %>/includes/"
-          "rsync -avz --delete --progress <%= config.app %>/_includes/themes/<%= amsf.theme.current %>/layouts/  <%= amsf.base %>/themes/<%= amsf.theme.current %>/layouts/"
-          "rsync -avz --delete --progress <%= config.app %>/assets/themes/<%= amsf.theme.current %>/             <%= amsf.base %>/themes/<%= amsf.theme.current %>/assets/"
-          "rsync -avz --delete --progress <%= config.app %>/_pages/themes/<%= amsf.theme.current %>/             <%= amsf.base %>/themes/<%= amsf.theme.current %>/pages/"
-        ].join("&&")
-
-      amsf__theme__to_dev_repo:
-        command: "rsync -avz --delete --progress --exclude=.git --exclude=node_modules <%= amsf.base %>/themes/<%= amsf.theme.current %>/ /Users/sparanoid/Git/amsf-<%= amsf.theme.current %> > rsync-theme-dev.log"
-
-      amsf__staging:
-        command: "git checkout staging && git pull && git merge master --no-edit && git push && git checkout master && git push"
-
-      amsf__release:
-        command: "git checkout release && git pull && git merge master --no-edit && git push && git checkout master && git push"
-
-      move_flatten_base:
-        command: "mv <%= config.dist %><%= config.base %>/* <%= config.dist %>/"
-
+        
     concurrent:
       options:
         logConcurrentOutput: true
