@@ -7,7 +7,7 @@
 # Jekyll basic configurations
 #
 source:         _app
-destination:    _site
+destination:    public
 timezone:       America/Los_Angeles
 permalink:      /:title.html
 markdown:       kramdown
@@ -99,7 +99,7 @@ description:    Hong Kongs Primary Event for Game Developers
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        "scaffold/"
+baseurl:        "/scaffold"
 
 # Flatten base
 #
