@@ -273,18 +273,18 @@ module.exports = (grunt) ->
           dest: "<%= config.dist %>"
         ]
 
-    uncss_inline:
-      options:
-        uncssrc: ".uncssrc"
-        htmlroot: "<%= config.dist %>"
-
-      dist:
-        files: [
-          expand: true
-          cwd: "<%= config.dist %>"
-          src: "**/*.html"
-          dest: "<%= config.dist %>"
-        ]
+ #   uncss_inline:
+ #     options:
+ #       uncssrc: ".uncssrc"
+ #       htmlroot: "<%= config.dist %>"
+#
+ #     dist:
+ #       files: [
+ #         expand: true
+ #         cwd: "<%= config.dist %>"
+ #         src: "**/*.html"
+ #         dest: "<%= config.dist %>"
+ #       ]
 
     cacheBust:
       options:
@@ -355,7 +355,7 @@ module.exports = (grunt) ->
     shell:
       options:
         stdout: true
-        
+
     concurrent:
       options:
         logConcurrentOutput: true
