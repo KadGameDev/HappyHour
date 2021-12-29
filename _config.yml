@@ -65,8 +65,8 @@ dev:            false
 
 # Site name
 #
-# Default:      Almace Scaffolding
-name:           Almace Scaffolding
+# Default:      Website Name
+name:           Game Dev Happy Hour
 
 # Site short name
 #
@@ -82,14 +82,14 @@ name:           Almace Scaffolding
 # - name_short: Sparanoid
 #
 # Default:      AMSF
-name_short:     AMSF
+name_short:     GDHH
 
 # Site description
 #
 # Will be used in the document meta and Atom feed subtitle
 #
 # Default:      Super-fast Jekyll framework
-description:    Super-fast Jekyll framework
+description:    Hong Kongs Primary Event for Game Developers
 
 # Base URL
 #
@@ -99,7 +99,7 @@ description:    Super-fast Jekyll framework
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        /lab/amsf
+baseurl:        
 
 # Flatten base
 #
@@ -109,7 +109,7 @@ baseurl:        /lab/amsf
 # enable this option if you're using GitHub Pages.
 #
 # Default:      false
-flatten_base:   false
+flatten_base:   true
 
 # CSS path used in templates
 #
@@ -129,8 +129,7 @@ feed:           /feed.xml
 # URLs for these fields
 #
 # Default:      https://sparanoid.com
-url:            https://sparanoid.com
-
+url:            https://gamedevhappyhour.com
 # Media assets URL
 #
 # Media assets URL are used in posts, without trailing slash. ie.
@@ -176,7 +175,7 @@ google_analytics:
   url:          https://www.google-analytics.com/analytics.js
 
 # Site Twitter account handle
-twitter:        sparanoid
+twitter:        GameDevHH
 
 # Twitter Cards large images
 #
