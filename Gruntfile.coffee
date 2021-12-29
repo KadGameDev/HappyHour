@@ -23,7 +23,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     config:
       cfg: grunt.file.readYAML("_config.yml")
-      cfg_dev: grunt.file.readYAML("_config.dev.yml")
+      cfg_dev: grunt.file.readYAML("_config.yml")
       pkg: grunt.file.readJSON("package.json")
       amsf: grunt.file.readYAML("_amsf.yml")
       deploy: grunt.file.readYAML("_deploy.yml")
