@@ -16,3 +16,5 @@ colorful_list:  true
 
 # Enable dark mode automatically via `prefers-color-scheme: dark`
 auto_dark_mode: true
+
+discord: "discordurlhere"
