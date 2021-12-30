@@ -211,7 +211,7 @@ rss_excerpt:    false
 # Show or hide generator credits, require theme support
 #
 # Default:      true
-credits:        false
+credits:        true
 
 # Custom records in robots.txt
 #
