@@ -102,6 +102,10 @@ body:hover .latest {
     line-height: calc(var(--line-height) * 1.2);
   }
 
+  .page {
+    --header-height: 80vh !important;
+  }
+
   header {
     --header-height: 100vh;
     --space-header: var(--space-lg);
@@ -130,9 +134,7 @@ body:hover .latest {
       --space-header: var(--space-sm);
     }
 
-    .page {
-      --header-height: 80vh;
-    }
+
 
     h1 {
       @include heading();
