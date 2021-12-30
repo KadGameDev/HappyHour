@@ -149,6 +149,10 @@ Bingo! A narrative that over the next six weeks I will hear from several other m
 “These whores, all they want is the cock!”
 Careful Skippy, you really aren’t as convincing as you think you are.
 
+
+{ % youtube tnq2gwBhvCc %}
+
+
 <blockquote>
   <p>
     “She is fucking other cocks my whore devil wife”?
