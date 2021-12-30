@@ -263,9 +263,14 @@ body:hover .latest {
 
   .video {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: calc(62% + var(--space-deco));
     overflow: hidden;
     border-radius: 5px;
+    --space-deco: var(--space-md);
+    display: block;
+    width: calc(100% + var(--space-deco) * 2);
+    margin-left: calc(var(--space-deco) * -1);
+    margin-right: calc(var(--space-deco) * -1);
 
     iframe {
       position: absolute;
