@@ -265,7 +265,7 @@ body:hover .latest {
     position: relative;
     padding-bottom: calc(62% + var(--space-deco));
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 15px;
     --space-deco: var(--space-md);
     display: block;
     width: calc(100% + var(--space-deco) * 2);
@@ -278,6 +278,7 @@ body:hover .latest {
       left: 0;
       width: 100%;
       height: 100%;
+      margin: 0 !important;
     }
   }
 
