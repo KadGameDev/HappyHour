@@ -109,7 +109,7 @@ baseurl:        "/scaffold"
 # enable this option if you're using GitHub Pages.
 #
 # Default:      false
-flatten_base:   false
+flatten_base:   true
 
 # CSS path used in templates
 #
@@ -211,7 +211,7 @@ rss_excerpt:    false
 # Show or hide generator credits, require theme support
 #
 # Default:      true
-credits:        true
+credits:        false
 
 # Custom records in robots.txt
 #
