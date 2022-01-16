@@ -342,14 +342,14 @@ module.exports = (grunt) ->
           serve: true
           incremental: true
           livereload: true
-          config: "_config.yml,_amsf.yml,<%= config.app %>/_data/<%= amsf.theme.current %>.yml,_config.dev.yml"
+          config: "_config.yml,_amsf.yml,<%= config.app %>_data/<%= amsf.theme.current %>.yml,_config.dev.yml"
           dest: "<%= config.dist %>"
           drafts: true
           future: true
 
       dist:
         options:
-          config: "_config.yml,_amsf.yml,<%= config.app %>/_data/<%= amsf.theme.current %>.yml"
+          config: "_config.yml,_amsf.yml,<%= config.app %>_data/<%= amsf.theme.current %>.yml"
           dest: "<%= config.dist %>"
 
     shell:
