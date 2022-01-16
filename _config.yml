@@ -99,7 +99,7 @@ description:    Hong Kongs Primary Event for Game Developers
 # `/my-project`, without trailing slash.
 #
 # Default:      ""
-baseurl:        "/scaffold"
+baseurl:        "/"
 
 # Flatten base
 #
