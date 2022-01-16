@@ -622,15 +622,7 @@ module.exports = (grunt) ->
     "amsf-func-postupdate"
   ]
 
-  grunt.registerTask "init", "Initialize new project", [
-    "amsf-func-mkdir"
-    "theme-add"
-  ]
-
-  grunt.registerTask "update", "Update AMSF and the activated theme", [
-    "amsf-update"
-    "theme-update"
-  ]
+ 
 
   grunt.registerTask "serve", "Fire up a server on local machine for development", [
     "clean:main"
@@ -640,17 +632,6 @@ module.exports = (grunt) ->
     "concurrent:serve"
   ]
 
-  grunt.registerTask "test", "Build test task", ->
-    grunt.task.run [
-      "build"
-    ]
-    if !grunt.option("local")
-      grunt.task.run [
-        "theme-add"
-        "theme-update"
-        "theme-save"
-        "amsf-update"
-      ]
 
   grunt.registerTask "flatten_check", "Build site with jekyll", ->
     if grunt.config.get(['config']).flatten_base
@@ -667,7 +648,6 @@ module.exports = (grunt) ->
     "jekyll:dist"
     "cssmin"
     "concurrent:dist"
-    "cacheBust"
     "html_trim"
     "service_worker"
     "terser:sw"
@@ -676,44 +656,6 @@ module.exports = (grunt) ->
     "flatten_check"
     "cleanempty"
   ]
-
-  grunt.registerTask "release", "Build, bump and commit", (type) ->
-    grunt.task.run [
-      "bump-only:#{type or 'patch'}"
-      "conventionalChangelog"
-      "replace:amsf__core__update_version"
-      "replace:amsf__site__update_version"
-      "bump-commit"
-    ]
-
-  grunt.registerTask "publish", "Publish new release", (branch) ->
-    grunt.task.run [
-      "shell:amsf__#{branch or 'staging'}"
-    ]
-
-  grunt.registerTask "deploy-rsync", "Deploy to remote server via rsync",  [
-    "shell:amsf__deploy__rsync"
-  ]
-
-  grunt.registerTask "deploy-s3", "Deploy to AWS S3",  [
-    "shell:amsf__deploy__s3"
-  ]
-
-  grunt.registerTask "deploy-sparanoid", "Deploy to remote server (for sparanoid.com)",  ->
-    if grunt.option("no-commit")
-      grunt.task.run [
-        "shell:amsf__deploy__sparanoid__copy_to_local"
-      ]
-    else
-      grunt.task.run [
-        "shell:amsf__deploy__sparanoid__copy_to_local"
-        "shell:amsf__deploy__sparanoid__auto_commit"
-      ]
-
-  grunt.registerTask "deploy", "Deploy to remote server", (type) ->
-    grunt.task.run [
-      "deploy-#{type or 'rsync'}"
-    ]
 
   grunt.registerTask "default", "Default task aka. build task",  ->
     grunt.task.run [
