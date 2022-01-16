@@ -24,6 +24,6 @@ jobs:
 
     - name: Build
       run: |
+        gem install jekyll bundler
         npm install
-        npm install jekyll
         grunt
