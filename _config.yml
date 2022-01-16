@@ -6,7 +6,7 @@
 #
 # Jekyll basic configurations
 #
-source:         
+source:         _app
 destination:    _site
 timezone:       America/Los_Angeles
 permalink:      /:title.html
