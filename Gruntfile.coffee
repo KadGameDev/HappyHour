@@ -401,7 +401,7 @@ module.exports = (grunt) ->
             src: [
               "_amsf.yml"
             ]
-            dest: "./"
+            dest: "/"
           }
         ]
 
@@ -424,7 +424,7 @@ module.exports = (grunt) ->
               "!.DS_Store"
               "!TODOS.md"
             ]
-            dest: "./"
+            dest: "/"
           }
           {
             expand: true
