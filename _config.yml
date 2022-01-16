@@ -106,7 +106,7 @@ flatten_base:   false
 # CSS path used in templates
 #
 # Default:      /assets
-assets:         /assets
+assets:         assets
 
 # Feed URL
 #
