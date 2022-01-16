@@ -11,6 +11,8 @@ It's all about building your first [indie mobile] game! From concept and design 
 {% include _youtube.html id="qEIdOyp6SxE" %}
 
 
-Timestamps
+##Timestamps
+
 0:00 - Presentation
+
 29:16 - Q&A
