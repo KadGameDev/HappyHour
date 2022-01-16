@@ -651,7 +651,6 @@ module.exports = (grunt) ->
     "html_trim"
     "service_worker"
     "terser:sw"
-    "sri_hash:dist"
     "doctype"
     "flatten_check"
     "cleanempty"
