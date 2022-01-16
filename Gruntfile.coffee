@@ -252,26 +252,26 @@ module.exports = (grunt) ->
           dest: "<%= config.dist %>"
         ]
 
-    assets_inline:
-      options:
-        jsDir: "<%= config.dist %>"
-        cssDir: "<%= config.dist %>"
-        assetsDir: "<%= config.dist %>"
-        includeTag: "?assets-inline"
-        inlineImg: false
-        inlineSvg: true
-        inlineSvgBase64: false
-        inlineLinkTags: true
-        assetsUrlPrefix: "<%= config.base %><%= config.assets %>"
-        deleteOriginals: true
+#    assets_inline:
+#      options:
+#        jsDir: "<%= config.dist %>"
+#        cssDir: "<%= config.dist %>"
+#        assetsDir: "<%= config.dist %>"
+#        includeTag: "?assets-inline"
+#        inlineImg: false
+#        inlineSvg: true
+#        inlineSvgBase64: false
+#        inlineLinkTags: true
+#        assetsUrlPrefix: "<%= config.base %><%= config.assets %>"
+#        deleteOriginals: true
 
-      dist:
-        files: [
-          expand: true
-          cwd: "<%= config.dist %>"
-          src: "**/*.html"
-          dest: "<%= config.dist %>"
-        ]
+#      dist:
+#        files: [
+#          expand: true
+#          cwd: "<%= config.dist %>"
+#          src: "**/*.html"
+#          dest: "<%= config.dist %>"
+#        ]
 
  #   uncss_inline:
  #     options:
