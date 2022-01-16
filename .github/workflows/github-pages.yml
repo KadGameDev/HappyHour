@@ -1,29 +1,38 @@
-name: NodeJS with Grunt
+name: build site with jekyll and deploy on github pages
 
 on:
-  push:
-    branches: [ master ]
+  push: 
+    branches: 
+      - master
   pull_request:
-    branches: [ master ]
+    branches: 
+      - master
 
 jobs:
-  github-pages:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-    
+  jekyll:
+    runs-on: ubuntu-18.04 # ubuntu-latest is now 20.04 and doesn't seem to work
     steps:
-    - uses: actions/checkout@v2
+      # checkout code
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      # Use ruby/setup-ruby to shorten build times
+      # https://github.com/ruby/setup-ruby
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-    - name: Build
-      run: |
-        gem install jekyll bundler
-        npm install
-        grunt
+      # use jekyll-action-ts to build
+      # https://github.com/limjh16/jekyll-action-ts
+      - uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true
+
+      # use actions-gh-pages to deploy
+      # https://github.com/peaceiris/actions-gh-pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # GITHUB_TOKEN secret is set up automatically
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
