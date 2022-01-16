@@ -14,7 +14,10 @@ clean_homepage: true
 # Default:      false
 colorful_list:  true
 
+homepage_logo: svg/GameDevHappyHour_Logo_Full_Colour.svg
+
 # Enable dark mode automatically via `prefers-color-scheme: dark`
 auto_dark_mode: true
 
-discord: https://www.facebook.com/groups/1678684479019813/about/
+channel_name: Facebook
+channel_link: https://www.facebook.com/groups/1678684479019813/about/

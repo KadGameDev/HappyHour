@@ -13,13 +13,13 @@ thumb_force_logo: true
   <header>
 
     <h1 class="image-title">
-      Game Dev Happy Hour
-      <img src="{{ amsf_user_assets }}/svg/GameDevHappyHour_Logo_Full_Colour.svg">
+      {{ site.meta.name }}
+      <img src="{{ amsf_user_assets }}/{{ site.homepage_logo }}">
     </h1>
 
     <h2 class="sub-title">{{ site.description }}</h2>
 
-    <small>Join us on <b><a href="{{ site.discord }}">Discord</a></b></small>
+    <small>Join us<b><a href="{{ site.channel_link }}">{{ site.channel_name }}</a></b></small>
   </header>
 
   <div class="page-content">
