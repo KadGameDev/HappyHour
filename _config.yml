@@ -121,7 +121,7 @@ feed:           /feed.xml
 # URLs for these fields
 #
 # Default:      https://sparanoid.com
-url:            https://gamedevhappyhour.com
+url:            https://kadgamedev.github.io/HappyHour
 # Media assets URL
 #
 # Media assets URL are used in posts, without trailing slash. ie.
